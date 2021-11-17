@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CashbackHackServiceTest {
+public class CashbackHackServiceTest {
 
     @Test
-  public void shouldCalculateCashbackHackService() {
+    public void shouldCalculateCashbackHackService() {
         CashbackHackService cash = new CashbackHackService();
         int amount = 900;
 
@@ -49,6 +49,7 @@ class CashbackHackServiceTest {
 
         assertEquals(actual, expected);
     }
+
     @Test
     public void shouldCalculateCashbackHackServiceAboveBorder() {
         CashbackHackService cash = new CashbackHackService();
