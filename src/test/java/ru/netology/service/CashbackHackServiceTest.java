@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CashbackHackServiceTest {
 
     @Test
-  public void shouldRemain() {
+  public void shouldCalculateCashbackHackService() {
         CashbackHackService cash = new CashbackHackService();
         int amount = 900;
 
@@ -18,7 +18,7 @@ class CashbackHackServiceTest {
     }
 
     @Test
-    public void shouldRemainMin() {
+    public void shouldCalculateCashbackHackServiceMinAmount() {
         CashbackHackService cash = new CashbackHackService();
         int amount = 1;
 
@@ -29,7 +29,7 @@ class CashbackHackServiceTest {
     }
 
     @Test
-    public void shouldRemainMax() {
+    public void shouldCalculateCashbackHackServiceBelowBorder() {
         CashbackHackService cash = new CashbackHackService();
         int amount = 999;
 
@@ -40,12 +40,22 @@ class CashbackHackServiceTest {
     }
 
     @Test
-    public void shouldRemain1000() {
+    public void shouldCalculateCashbackHackServiceBoundaryValue() {
         CashbackHackService cash = new CashbackHackService();
         int amount = 1000;
 
         int actual = cash.remain(amount);
         int expected = 0;
+
+        assertEquals(actual, expected);
+    }
+    @Test
+    public void shouldCalculateCashbackHackServiceAboveBorder() {
+        CashbackHackService cash = new CashbackHackService();
+        int amount = 1001;
+
+        int actual = cash.remain(amount);
+        int expected = 999;
 
         assertEquals(actual, expected);
     }
